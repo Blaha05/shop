@@ -1,5 +1,6 @@
 // HeadNav.cy.js
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import HeadNav from '../../src/main/head/head';
 
 describe('HeadNav Component', () => {
@@ -9,7 +10,11 @@ describe('HeadNav Component', () => {
     });
 
     it('should render the HeadNav component', () => {
-        cy.mount(<HeadNav />);
+        cy.mount(
+            <MemoryRouter>
+                <HeadNav />
+            </MemoryRouter>
+        );
         cy.get('.topbar').should('be.visible'); // перевірка наявності головного елемента
     });
 
@@ -21,7 +26,11 @@ describe('HeadNav Component', () => {
         ];
         localStorage.setItem('cart', JSON.stringify(mockCartItems));
 
-        cy.mount(<HeadNav />);
+        cy.mount(
+            <MemoryRouter>
+                <HeadNav />
+            </MemoryRouter>
+        );
 
         // Відкриваємо кошик
         cy.get('.material-icons').contains('ballot').click({ force: true });

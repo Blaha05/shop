@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const LoginBox = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  //const navigate = useNavigate();  Ініціалізація навігатора
+  const navigate = useNavigate();  //Ініціалізація навігатора
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
@@ -33,7 +33,7 @@ const LoginBox = () => {
         localStorage.setItem("accessToken", data);
         const token = localStorage.getItem("accessToken");
         console.log(token)
-        //navigate('/'); 
+        navigate('/'); 
 
       } else {
         // Handle login error here
