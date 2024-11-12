@@ -1,0 +1,161 @@
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+h1,h2,h3{
+    margin: 0;
+}
+
+.cont2 {
+    max-width: 1300px;
+    padding-top: 30px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+}
+
+.cont_foto {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    padding-right: 40px;
+}
+
+.active_cont {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 75%; /* Це 2/3 від ширини */
+    position: relative;
+}
+
+.useful_cont {
+    overflow: hidden;
+    width: 15%;
+    padding-top: 15%; /* Це 2/3 від ширини */
+    position: relative;
+}
+
+.active_cont img, .useful_cont img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont_info {
+    position: fixed; /* Залишаємо контейнер зафіксованим на екрані */
+    width: calc(50% - 100px);
+    right: 110px;
+    border-radius: 10px; /* Заокруглення кутів */
+    padding: 10px 20px; /* Внутрішні відступи */
+}
+
+
+h2.title_product {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #212529;
+}
+
+p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+h2.price {
+    font-size: 28px;
+    color: #28a745;
+    margin-bottom: 30px;
+}
+
+.cont_button {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.card, .like {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.like {
+    padding: 15px;
+}
+
+.card {
+    background-color: black;
+    color: #fff;
+    border: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.like {
+    background-color: #e9ecef;
+}
+
+.like:hover {
+    background-color: #ff6b6b;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Стилізація для блоку коментарів */
+.comments_section {
+    width: calc(50% - 40px);
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comments_section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.comment {
+    margin-bottom: 15px;
+}
+
+.comment p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 5px 0;
+    color: #555;
+}
+
+.comment .author {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.comment .date {
+    font-size: 12px;
+    color: #999;
+}

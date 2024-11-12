@@ -1,0 +1,130 @@
+.topbar {
+    width: calc(100% - 301px); /* Ширина з урахуванням лівої панелі */
+    background-color: #fff;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    border-radius: 13px;
+    margin: 17px;
+}
+
+/* Пошуковий рядок */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 12px;
+    width: 200px;
+    border: #000 0.5px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.search-bar i {
+    color: #9e9e9e;
+    margin-right: 8px;
+}
+
+/* Блок іконок */
+.icon-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-bar i {
+    font-size: 24px;
+    color: #9e9e9e;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.icon-bar i:hover {
+    color: #000;
+}
+
+/* Іконка профілю */
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #9e9e9e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-icon:hover {
+    background-color: #757575;
+}
+
+.card_cont{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Центрує елемент */
+    z-index: 1000;    
+    backdrop-filter: blur(10px); /* Розмиття всього, що позаду */
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100vw; /* 100% від ширини вікна браузера */
+    height: 100vh; /* 100% від висоти вікна браузера */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_{
+    width: 450px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+
+}
+
+.cont_close_icon i{
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+}
+
+
+.cont_item_in_card i{
+    font-size: 24px;
+    color: #9e9e9e;
+    cursor: pointer;
+}
+
+.cont___{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cont_item_card{
+    display: flex;
+    width: calc(100% - 50px);
+    justify-content: space-between;
+}
