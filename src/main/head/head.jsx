@@ -1,9 +1,13 @@
 import "./head.css";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 export default function HeadNav() {
     const [isVisible, setIsVisible] = useState(false);
     const [cartItems, setCartItems] = useState([]);
+    const [searchTerm, setSearchTerm] = useState(''); // Стейт для збереження введеного тексту
+    const navigate = useNavigate(); // Хук для навігації
 
     // Функція для отримання товарів з кошика
     const getCart = () => {
@@ -40,6 +44,12 @@ export default function HeadNav() {
         setIsVisible((prevState) => !prevState);
     };
 
+    const handleSearchClick = () => {
+        if (searchTerm.trim()) { // Перевірка, чи не пустий рядок
+            navigate(`/${searchTerm}`); // Переходить на сторінку пошуку з введеним значенням
+        }
+    };
+
     return (
         <div className="">
             <div className="topbar">
@@ -49,8 +59,13 @@ export default function HeadNav() {
 
                 <div className="icon-bar">
                     <div className="search-bar">
-                        <i className="material-icons">search</i>
-                        <input type="text" placeholder="Search here" />
+                        <i className="material-icons" onClick={handleSearchClick}>search</i>
+                        <input 
+                            type="text" 
+                            placeholder="Search here" 
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)} // Оновлює значення в стейті
+                        />
                     </div>
                     <i className="material-icons">notifications</i>
                     <i className="material-icons" onClick={toggleVisibility}>

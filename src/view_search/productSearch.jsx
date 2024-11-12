@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import './boxProduct.css'
+import { useParams } from 'react-router-dom';
+import HeadNav from "../main/head/head";
+import styles from './styles.css'
 
 function ProductItem({ title, description, timeAgo, id }) {
-    
     const [fotos, setFotos] = useState([]);
 
     useEffect(() => {
@@ -26,14 +27,14 @@ function ProductItem({ title, description, timeAgo, id }) {
 }
 
 
-export default function BoxProduct() {
+export default function BoxProductSearch() {
 
     const [products, setProducts] = useState([]); // Стейт для збереження отриманих даних
+    const { search } = useParams(); // Витягує 'id' із URL
 
-    
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/getptoduct') // Виправлений URL
+        fetch(`http://127.0.0.1:8000/search?search=${search}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -50,7 +51,10 @@ export default function BoxProduct() {
     }, []); // Порожній масив, щоб виконати запит один раз після рендеру
 
     return (
-        <main>
+        <main style={{position:"relative", width:'calc(100% - 17px)', margin:'80px 15px 0'}}>
+            <div className="cont_head_search">
+                <HeadNav className='cont_head_search' />
+            </div>
             <div className="cont">
                 {products.map((product, index) => (
                     <ProductItem
